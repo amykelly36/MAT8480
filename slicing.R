@@ -1,7 +1,6 @@
 # import data
 data<-read.csv("pva97nko.csv")
 
-## RCookbook(p112)
 # select a value
 data[1,"TargetB"]
 
