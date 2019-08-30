@@ -1,5 +1,5 @@
 # import data
-data<-read.csv("pva97nko.csv")
+data<-read.csv("pva97nko.csv", header=TRUE, na.strings=c(".", "NA", "", "?"))
 
 # select a value
 data[1,"TargetB"]
