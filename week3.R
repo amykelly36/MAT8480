@@ -157,9 +157,7 @@ basicStats(data.xf[c("GiftAvgAll", "GiftAvgCard36")])
 # Transformation on nominal inputs
 data.xf<-data
 levels(data.xf$StatusCat96NK)
-levels(data.xf$StatusCat96NK)[levels(data$StatusCat96NK)=="S"]<-"A"
-levels(data.xf$StatusCat96NK)[levels(data$StatusCat96NK)=="F"]<-"N"
-levels(data.xf$StatusCat96NK)[levels(data$StatusCat96NK)=="E"]<-"L"
+levels(data.xf$StatusCat96NK)<-c("A", "E", "F", "A", "E", "F")
 
 
 
