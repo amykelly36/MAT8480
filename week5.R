@@ -191,7 +191,7 @@ reg.poly <- glm(TargetB ~.*.,
 summary(reg.poly)
 
 
-# Stepwise selection
+# Backward selection
 reg.poly.step <- step(reg.poly, k=log(n), trace = FALSE)
 summary(reg.poly.step)
 reg.poly.step.prob<-predict(reg.poly.step,data.mdl[!split, vars.poly], type = "response")
