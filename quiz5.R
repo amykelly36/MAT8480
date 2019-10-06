@@ -191,10 +191,11 @@ Mode<-sapply(organics.imp[split, index.cat],mode)
 organics.imp[index.cat]<-as.data.frame(mapply(impute,x=organics.imp[index.cat],y = Mode))
 
 # Create Missing Value Flag #
-organics.imp[paste(names(organics)[index.na], "NA", sep=".")] <- as.factor(ifelse(
-  is.na(organics[index.na]), 1, 0))
+organics.imp[paste(names(organics)[index.na], "NA", sep=".")] <- ifelse(
+  is.na(organics[index.na]), 1, 0)
 
-
+organics.imp[grep("NA$",names(organics.imp))]<-lapply(
+  organics.imp[grep("NA$",names(organics.imp))], as.factor) 
 
 #### Modeling #####
 
