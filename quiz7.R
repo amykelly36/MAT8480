@@ -329,7 +329,7 @@ scoring<- function(organics,Mean, Mode, reg.step, ScaleParams,annThresh) {
   organics.ann[vars.ann]<-predict(ScaleParams, organics.ann[vars.ann])
   
   ## Hot encoding ##
-  dummy <- dummyVars( ~ ., data = organics.ann[split, vars.ann], fullRank = TRUE)
+  dummy <- dummyVars( ~ ., data = organics.ann[vars.ann], fullRank = TRUE)
   organics.ann.encode<-as.data.frame(predict(dummy, newdata = organics.ann[vars.ann])) 
   
   
